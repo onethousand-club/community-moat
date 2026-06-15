@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Community Moat — Mel Miles</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #F6F1E9;
+    --bg-soft: #FBF8F2;
+    --ink: #2A2520;
+    --ink-soft: #5A5249;
+    --line: #DED5C7;
+    --accent: #9C5B3B;
+    --accent-soft: #B98C6D;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'Inter', sans-serif;
+    font-weight: 300;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+    letter-spacing: 0.01em;
+  }
+
+  .wrap { max-width: 760px; margin: 0 auto; padding: 0 32px; }
+
+  h1, h2, h3 { font-family: 'Fraunces', serif; font-weight: 400; letter-spacing: -0.01em; }
+
+  .eyebrow {
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 0.72rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+
+  /* HERO */
+  .hero { padding: 140px 0 90px; }
+  .hero .eyebrow { margin-bottom: 28px; }
+  .hero h1 {
+    font-size: clamp(2.6rem, 6vw, 4.1rem);
+    line-height: 1.08;
+    font-weight: 300;
+    margin-bottom: 32px;
+  }
+  .hero h1 em { font-style: italic; color: var(--accent); }
+  .hero .lede {
+    font-size: clamp(1.05rem, 2.2vw, 1.25rem);
+    color: var(--ink-soft);
+    max-width: 580px;
+  }
+
+  .rule { height: 1px; background: var(--line); border: 0; margin: 0; }
+
+  section { padding: 72px 0; }
+
+  .section-label {
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 0.72rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--accent-soft);
+    margin-bottom: 26px;
+  }
+
+  h2 { font-size: clamp(1.7rem, 3.6vw, 2.3rem); line-height: 1.2; margin-bottom: 26px; font-weight: 300; }
+
+  p { margin-bottom: 22px; font-size: 1.05rem; color: var(--ink-soft); }
+  p:last-child { margin-bottom: 0; }
+  p strong { color: var(--ink); font-weight: 500; }
+
+  .who p { color: var(--ink); font-size: 1.12rem; }
+
+  /* TIERS */
+  .tiers { background: var(--bg-soft); }
+  .tier {
+    padding: 46px 0;
+    border-top: 1px solid var(--line);
+  }
+  .tier:first-of-type { border-top: 0; }
+  .tier-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+  }
+  .tier-name { font-family: 'Fraunces', serif; font-size: 1.5rem; font-weight: 400; }
+  .tier-name span { display: block; font-family: 'Inter', sans-serif; font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent-soft); font-weight: 500; margin-bottom: 8px; }
+  .tier-price { font-family: 'Fraunces', serif; font-size: 1.5rem; color: var(--accent); white-space: nowrap; }
+  .tier-price small { font-family: 'Inter', sans-serif; font-size: 0.8rem; color: var(--ink-soft); font-weight: 300; }
+  .tier-outcome { font-size: 1.08rem; color: var(--ink); margin-bottom: 16px; }
+
+  .pillars { list-style: none; margin: 18px 0 0; }
+  .pillars li { font-size: 1rem; color: var(--ink-soft); padding: 9px 0 9px 22px; border-bottom: 1px solid var(--line); position: relative; }
+  .pillars li:last-child { border-bottom: 0; }
+  .pillars li:before { content: ""; position: absolute; left: 0; top: 18px; width: 6px; height: 6px; background: var(--accent-soft); border-radius: 50%; }
+  .pillars li b { color: var(--ink); font-weight: 500; }
+
+  /* CTA */
+  .close { text-align: center; padding: 96px 0 110px; }
+  .close h2 { margin-bottom: 22px; }
+  .close p { max-width: 520px; margin-left: auto; margin-right: auto; margin-bottom: 38px; }
+  .btn {
+    display: inline-block;
+    background: var(--accent);
+    color: #FBF8F2;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 0.82rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 18px 44px;
+    border-radius: 2px;
+    transition: background 0.25s ease, transform 0.25s ease;
+  }
+  .btn:hover { background: #834627; transform: translateY(-1px); }
+
+  .btn-line {
+    display: inline-block;
+    margin-top: 24px;
+    background: transparent;
+    color: var(--accent);
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 0.74rem;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 13px 30px;
+    border: 1px solid var(--accent);
+    border-radius: 2px;
+    transition: background 0.25s ease, color 0.25s ease;
+  }
+  .btn-line:hover { background: var(--accent); color: #FBF8F2; }
+  .sign { margin-top: 46px; font-family: 'Fraunces', serif; font-style: italic; font-size: 1.25rem; color: var(--ink); }
+  .sign span { display: block; font-family: 'Inter', sans-serif; font-style: normal; font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--ink-soft); margin-top: 8px; font-weight: 400; }
+
+  footer { text-align: center; padding: 40px 0 60px; font-size: 0.8rem; color: var(--accent-soft); letter-spacing: 0.04em; }
+
+  @media (max-width: 600px) {
+    .wrap { padding: 0 24px; }
+    .hero { padding: 96px 0 64px; }
+    section { padding: 56px 0; }
+    .tier-head { gap: 8px; }
+  }
+</style>
+</head>
+<body>
+
+  <header class="hero">
+    <div class="wrap">
+      <p class="eyebrow">Community Moat &nbsp;·&nbsp; Advisory by Mel Miles</p>
+      <h1>Community is the moat in the <em>age of AI</em>.</h1>
+      <p class="lede">As the world moves online and automated, loyalty and belonging become the real competitive advantage. People give their loyalty through real-life experiences, not through tech. I help organizations build that moat.</p>
+    </div>
+  </header>
+
+  <hr class="rule">
+
+  <section class="who">
+    <div class="wrap">
+      <p class="section-label">Who I work with</p>
+      <p>Family offices, NGOs, and tech companies who want to grow loyalty and belonging through real community. The through line is the same in every room: relationships are a health intervention, and social isolation carries a mortality risk on par with smoking. When you build genuine belonging, retention and trust follow.</p>
+    </div>
+  </section>
+
+  <hr class="rule">
+
+  <section>
+    <div class="wrap">
+      <p class="section-label">A little about me</p>
+      <h2>I build community as infrastructure, not as events.</h2>
+      <p>I am the founder and CEO of OneThousandClub, a members club in Lisbon, Barcelona, and Madrid with roughly 600 members, built entirely on in-person dinners and curated experiences. Before founding it, I spent more than fifteen years working at the intersection of science, health systems, and human behavior, with roles across the CDC, USAID's President's Malaria Initiative, around six years at the Gates Foundation, and Dimagi in global health tech.</p>
+      <p>I am a solo female founder who raised venture capital, which places me in the top 2% of solo women founders funded in Europe. What I do is build community as health and business infrastructure, not as a calendar of events. That difference is everything, and it is what turns gatherings into a moat your competitors cannot copy.</p>
+    </div>
+  </section>
+
+  <section class="tiers" id="work">
+    <div class="wrap">
+      <p class="section-label">How we can work together</p>
+      <h2>Three ways in, depending on where you are.</h2>
+
+      <div class="tier">
+        <div class="tier-head">
+          <div class="tier-name"><span>Tier One</span>Spot Coaching</div>
+          <div class="tier-price">€250</div>
+        </div>
+        <p class="tier-outcome">You walk away with a clear, expert answer to the question in front of you, and the confidence to act on it.</p>
+        <p>A focused one-hour call plus an email follow-up with tailored resources, including my OneThousandClub playbooks and prompts. Best for someone who needs a fast, expert second opinion.</p>
+        <a class="btn-line" href="https://calendly.com/mel-onethousandclub/spot-advisory-session">Book a spot advisory session</a>
+      </div>
+
+      <div class="tier">
+        <div class="tier-head">
+          <div class="tier-name"><span>Tier Two</span>Monthly Design Sprint</div>
+          <div class="tier-price">€1,000</div>
+        </div>
+        <p class="tier-outcome">You leave with a full blueprint to launch your community, including a recommended tech stack and the automations to run it.</p>
+        <p>Whether you are creating a community from scratch, launching a membership model, or scaling in-person events so they are replicable, meaningful, and on-brand, we design it end to end across four weekly one-hour calls and five pillars:</p>
+        <ul class="pillars">
+          <li><b>Product</b> &nbsp;how you gather people in a repeatable way</li>
+          <li><b>Business model</b> &nbsp;the membership that drives revenue</li>
+          <li><b>People</b> &nbsp;how people move in and out of your community, the full customer journey</li>
+          <li><b>Belonging</b> &nbsp;how you build for retention and create your moat</li>
+          <li><b>AI setup</b> &nbsp;how you automate, hire, and manage for smooth operations</li>
+        </ul>
+        <a class="btn-line" href="https://calendly.com/mel-onethousandclub/community-moat-1-month-design-sprint">Book the design sprint</a>
+      </div>
+
+      <div class="tier">
+        <div class="tier-head">
+          <div class="tier-name"><span>Tier Three</span>Ongoing Retainer</div>
+          <div class="tier-price">€3,000–€10,000 <small>/ month</small></div>
+        </div>
+        <p class="tier-outcome">You get a partner in the work.</p>
+        <p>I step in alongside you as your fractional Chief Community Officer, building for a future where loyalty is earned through in-person connection, not through tech. Pricing depends on scope and the level of support you need.</p>
+        <a class="btn-line" href="mailto:mel@onethousandclub.com?subject=Community%20Moat%20%E2%80%94%20Fractional%20CCO%20enquiry">Get in touch</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="close">
+    <div class="wrap">
+      <p class="section-label" style="color:var(--accent)">The next step</p>
+      <h2>Let's build your moat.</h2>
+      <p>Book a call and tell me which tier fits where you are. For an ongoing retainer, write to me directly. We will get started from there.</p>
+      <a class="btn" href="https://calendly.com/mel-onethousandclub/spot-advisory-session">Book a call</a>
+      <a class="btn-line" href="mailto:mel@onethousandclub.com?subject=Community%20Moat%20enquiry" style="margin-left:10px;">Email me</a>
+      <p class="sign">Warmly, Mel<span>Mel Miles · Community Moat</span></p>
+    </div>
+  </section>
+
+  <footer>
+    Community Moat &nbsp;·&nbsp; Advisory by Mel Miles
+  </footer>
+
+</body>
+</html>
